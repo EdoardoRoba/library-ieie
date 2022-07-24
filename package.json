@@ -1,0 +1,21 @@
+{
+  "name": "library-ieie-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "heroku-postbuild": "set HTTPS=true && cd frontend && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdoardoRoba/library-ieie.git"
+  },
+  "author": "Edoardo Roba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdoardoRoba/library-ieie/issues"
+  },
+  "homepage": "https://github.com/EdoardoRoba/library-ieie#readme"
+}
