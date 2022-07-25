@@ -385,7 +385,7 @@ function Home(props) {
                                 Trova libro
                             </Button>
                             <Button style={{ color: 'white', backgroundColor: '#ffae1b', marginLeft: '1rem', marginRight: '1rem' }} onClick={handleChangeUpdateBook}>
-                                Aggiorna libro
+                                Sposta libro
                             </Button>
                             <Button style={{ color: 'white', backgroundColor: 'red', marginLeft: '1rem' }} onClick={handleChangeDeleteBook}>
                                 Elimina libro

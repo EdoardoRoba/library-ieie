@@ -8,15 +8,15 @@ require('dotenv').config();
 var cors = require('cors')
 const jwt = require("jsonwebtoken")
 const app = express();
-const feUrl = "http://localhost:3000"
-// const feUrl = "https://mylibrary-herokuapp.herokuapp.com"
+// const feUrl = "http://localhost:3000"
+const feUrl = "https://mylibrary-herokuapp.herokuapp.com"
 const port = process.env.PORT || 8050
 // const idEmailAlert = '62086ab09422a5466157fe5a'
 const path = require('path');
 
 // COMMENT WHEN RUNNING LOCALLY
-// app.use(express.static(path.join(__dirname, "/frontend/build")));
-// app.use(cors())
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.use(cors())
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", '*');
@@ -29,19 +29,19 @@ app.use(function (req, res, next) {
 // app.use(bodyParser.json())
 
 // COMMENT WHEN BUILDING TO HEROKU next 13 lines
-const whitelist = [feUrl]
-// enable CORS policy
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (!origin || whitelist.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error("Not allowed by CORS"))
-        }
-    },
-    credentials: true,
-}
-app.use(cors(corsOptions))
+// const whitelist = [feUrl]
+// // enable CORS policy
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (!origin || whitelist.indexOf(origin) !== -1) {
+//             callback(null, true)
+//         } else {
+//             callback(new Error("Not allowed by CORS"))
+//         }
+//     },
+//     credentials: true,
+// }
+// app.use(cors(corsOptions))
 
 app.use(express.json({ limit: '1000mb' }));
 app.use(express.urlencoded({ limit: '1000mb' }));
@@ -116,6 +116,6 @@ app.delete('/api/book/:id', (req, res) => {
 
 
 // COMMENT WHEN RUNNING LOCALLY
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
+});
