@@ -717,7 +717,7 @@ function Home(props) {
                 <DialogContent>
                     {
                         !selectedSection ? "" : <div style={{ marginTop: '2rem' }}>
-                            <div>
+                            <div style={{ display: "flex", justifyContent: 'center', textAlign: 'center' }}>
                                 <TextField id="filled-basic" label="titolo" variant="outlined" onChange={(event) => { setTitle(event.target.value) }} />
                                 <TextField id="filled-basic" label="autore" variant="outlined" onChange={(event) => { setAuthor(event.target.value) }} />
                                 <TextField id="filled-basic" label="genere" variant="outlined" onChange={(event) => { setGenre(event.target.value) }} />
@@ -726,16 +726,6 @@ function Home(props) {
                         </div>
                     }
                 </DialogContent>
-                {/* </Box> */}
-                <DialogActions>
-                    <Tooltip sx={{ marginRight: '1rem' }} title={"Aggiungi libro"}>
-                        <IconButton onClick={() => {
-                            console.log("ciao")
-                        }}>
-                            <AddCircleIcon fontSize="large" />
-                        </IconButton>
-                    </Tooltip>
-                </DialogActions>
             </Dialog>
         </div>
     );
